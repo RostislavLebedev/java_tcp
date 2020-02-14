@@ -6,6 +6,7 @@ public class server
 {
 	public static void main(String [] args) throws IOException
 	{
+		// ServerSocket und Socket erstellen
 		ServerSocket servSock = new ServerSocket(4999);
 		Socket s = servSock.accept();
 
