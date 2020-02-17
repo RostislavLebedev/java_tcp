@@ -13,6 +13,10 @@ public class client
 {
 	public static void main(String [] args) throws IOException
 	{
+		// runCMD Instanz, um CMD-Befehle auszuführen
+		String basedir = "C:/Users/Rostislav Lebedev/repos/firstProject";
+		runCMD runCommand = new runCMD(basedir);
+
 		// 	Socket(InetAddress address, int port)
 		InetAddress myIP = InetAddress.getByName("localhost"); // the own IPv4-Address
 		Socket s = new Socket(myIP.getHostAddress(), 4999);
@@ -38,6 +42,19 @@ public class client
 			BufferedReader bf = new BufferedReader(in);
 			String str = bf.readLine();
 			System.out.println("\tserver: " + str);
+
+			// CMD systeminfo am Client aufsühren und in der Datei outputCMD.txt speichern
+			if (str.equals("-systeminfo"))
+			{
+				try
+				{
+					runCommand.execCMD("systeminfo");
+				}
+				catch(InterruptedException iex)
+				{
+					iex.printStackTrace();
+				}
+			}
 		}
 	}
 }
