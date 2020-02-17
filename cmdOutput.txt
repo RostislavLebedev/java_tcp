@@ -23,10 +23,10 @@ Systemgebietsschema:                           de;Deutsch (Deutschland)
 Eingabegebietsschema:                          de;Deutsch (Deutschland)
 Zeitzone:                                      (UTC+01:00) BrÅssel, Kopenhagen, Madrid, Paris
 Gesamter physischer Speicher:                  8.073 MB
-VerfÅgbarer physischer Speicher:               3.340 MB
+VerfÅgbarer physischer Speicher:               3.717 MB
 Virtueller Arbeitsspeicher: Maximale Grî·e:    13.193 MB
-Virtueller Arbeitsspeicher: VerfÅgbar:         6.820 MB
-Virtueller Arbeitsspeicher: Zurzeit verwendet: 6.373 MB
+Virtueller Arbeitsspeicher: VerfÅgbar:         7.111 MB
+Virtueller Arbeitsspeicher: Zurzeit verwendet: 6.082 MB
 Auslagerungsdateipfad(e):                      C:\pagefile.sys
 DomÑne:                                        WORKGROUP
 Anmeldeserver:                                 \\DESKTOP-CSMDB1H

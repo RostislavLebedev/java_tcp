@@ -61,4 +61,10 @@ class runCMD
             ex.printStackTrace();
         }
     }
+
+    // Datei cmdOutput.txt einlesen und den inhalt zeilenweise an den Server schicken
+    public void sendOutput(OutputStream stream)
+    {
+
+    }
 }
