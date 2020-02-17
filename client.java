@@ -1,6 +1,8 @@
 /*
  * class client
- * 
+ * Client und Server können nacheinander Nachrichten austauschen
+ * Enter zum Abschicken
+ * "-q" + Enter zum Abbrechen
  */
 
 import java.net.*;
