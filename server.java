@@ -29,7 +29,7 @@ public class server
 
 			// Nutzereingaben einlesen
 			Scanner scan = new Scanner(System.in);
-			System.out.print("\tSie (Enter = abschicken): ");
+			System.out.print("\tSie: ");
 			String eingabeServer = scan.nextLine();
 
 			if (eingabeServer.equals("-q"))
