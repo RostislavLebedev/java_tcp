@@ -16,29 +16,17 @@ public class server
 		// ServerSocket und Socket erstellen
 		ServerSocket servSock = new ServerSocket(4999);
 		Socket s = servSock.accept();
+		chatUtils chat = new chatUtils(s);
 
 		System.out.println("client connected");
-		System.out.println("ENTER = Abschicken\n\"-q\" zum Beenden");
 		while(true)
 		{
-			// Nachricht vom Client empfangen
-			InputStreamReader in = new InputStreamReader(s.getInputStream());
-			BufferedReader bf = new BufferedReader(in);
-			String str = bf.readLine();
-			System.out.println("\tclient: " + str);
-
 			// Nutzereingaben einlesen
-			Scanner scan = new Scanner(System.in);
-			System.out.print("\tSie: ");
-			String eingabeServer = scan.nextLine();
+			chat.scanInput();
 
-			if (eingabeServer.equals("-q"))
-				break;
-
-			// Nutzereingaben auslesen
-			PrintWriter pr = new PrintWriter(s.getOutputStream());
-			pr.println(eingabeServer);
-			pr.flush();
+			// Nachricht vom Client empfangen
+			System.out.print("Client:\t");
+			chat.receiveMessage();
 		}
 	}
 }

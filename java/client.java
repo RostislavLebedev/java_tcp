@@ -16,44 +16,25 @@ public class client
 		// 	Socket(InetAddress address, int port)
 		InetAddress myIP = InetAddress.getByName("localhost"); // the own IPv4-Address
 		Socket s = new Socket(myIP.getHostAddress(), 4999);
-
-		System.out.println("\nENTER = Abschicken\n\"-q\" zum Beenden");
+		chatUtils chat = new chatUtils(s);
 
 		while(true)
 		{
 			// Nutzereinagben einlesen
-			sendeNachricht(s);
+			chat.scanInput();
 
 			// Nachricht vom Server erhalten
-			nachrichtVomServer(s);
+			System.out.print("Server:\t");
+			chat.receiveMessage();
 		}
 	}
 
-	public static void sendeNachricht(Socket s)
-    {
-    	Scanner scan = new Scanner(System.in);
-		System.out.print("\tSie: ");
-		String eingabeClient = scan.nextLine();
-		if (eingabeClient.equals("-q"))
-			System.exit(1);
-		else
-			nachrichtAnServer(s, eingabeClient); // Nutzereingaben an den Server schicken
-    }
 
-	// nachrichtAnServer(...) übermittelt die clientseitigen Nutzereingaben an den Server
-	public static void nachrichtAnServer(Socket s, String anServer)
-	{
-		try
-		{
-			PrintWriter pr = new PrintWriter(s.getOutputStream());
-			pr.println(anServer);
-			pr.flush();
-		}
-		catch(IOException e)
-		{
-			e.printStackTrace();
-		}
-	}
+
+
+
+
+
 
 	// nachrichtVomServer(...) gibt die vom Server empfangenen Nachrichten aus
 	public static void nachrichtVomServer(Socket s)
