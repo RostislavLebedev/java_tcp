@@ -20,7 +20,7 @@ public class client
 		
 
 		// 	Socket(InetAddress address, int port)
-		myIP = InetAddress.getByName("localhost"); // the own IPv4-Address
+		myIP = InetAddress.getByName("localhost"); // hier ist die IPv4-Adresse des Servers
 		s = new Socket(myIP.getHostAddress(), 4999);
 		chat = new chatUtils(s);
 

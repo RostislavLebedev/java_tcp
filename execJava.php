@@ -2,7 +2,7 @@
 	if(isset($_POST['action'])) {
 		switch($_POST['action']) {
 			case "clickMe":
-				execServer();
+				doStuff();
 				break;
 		}
 	}
@@ -21,7 +21,6 @@
 	{
 		chdir("java");
 		shell_exec("javac server.java && java server");
-		execClient();
 	}
 
 	function execClient()
