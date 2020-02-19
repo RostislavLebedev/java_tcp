@@ -13,10 +13,16 @@ public class client
 {
 	public static void main(String [] args) throws IOException
 	{
+		InetAddress myIP;
+		Socket s;
+		chatUtils chat;
+		String message;
+		
+
 		// 	Socket(InetAddress address, int port)
-		InetAddress myIP = InetAddress.getByName("localhost"); // the own IPv4-Address
-		Socket s = new Socket(myIP.getHostAddress(), 4999);
-		chatUtils chat = new chatUtils(s);
+		myIP = InetAddress.getByName("localhost"); // the own IPv4-Address
+		s = new Socket(myIP.getHostAddress(), 4999);
+		chat = new chatUtils(s);
 
 		while(true)
 		{
@@ -25,52 +31,47 @@ public class client
 
 			// Nachricht vom Server erhalten
 			System.out.print("Server:\t");
-			chat.receiveMessage();
+			message = chat.receiveMessage();
+
+			// Wenn nach Systeminfo gefragt wird
+			if(message.equals("-systeminfo"))
+			{
+				runSysInfo();
+			}
 		}
 	}
 
-
-
-
-
-
-
-
-	// nachrichtVomServer(...) gibt die vom Server empfangenen Nachrichten aus
-	public static void nachrichtVomServer(Socket s)
+	// Am Ende wird eine cmdOutput.txt erstellt
+	public static void runSysInfo()
 	{
-		String str = "";
+		String basedir;
+		runCMD runCommand;
 
-		// runCMD Instanz, um CMD-Befehle auszuführen
-		String basedir = "C:/Users/Rostislav Lebedev/repos/firstProject";
-		runCMD runCommand = new runCMD(basedir);
+		basedir = "C:/xampp/htdocs/mttc/proto/java";
+		runCommand = new runCMD(basedir);
 
 		try
 		{
-			InputStreamReader in = new InputStreamReader(s.getInputStream());
-			BufferedReader bf = new BufferedReader(in);
-			str = bf.readLine();
-			System.out.println("\tserver: " + str);
-
-			if (str.equals("-systeminfo"))
-			{
-				try
-				{
-					runCommand.execCMD("systeminfo"); // CMD "systeminfo" ausführen
-					sendOutput(s); // die Systeminformationen am Server darstellen
-				}
-				catch(InterruptedException iex)
-				{
-					iex.printStackTrace();
-				}
-			}
+			runCommand.execCMD("systeminfo");
 		}
-		catch(IOException e)
+		catch(InterruptedException iex)
 		{
-			e.printStackTrace();
+			iex.printStackTrace();
 		}
 	}
 
+	static void endConn()
+	{
+		System.exit(1);
+	}
+
+
+
+
+
+
+	
+	/*
 	// Datei cmdOutput.txt einlesen und den inhalt zeilenweise an den Server schicken
     // WIP
     public static void sendOutput(Socket s)
@@ -112,4 +113,5 @@ public class client
         	}
         }
     }
+    */
 }

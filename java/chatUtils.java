@@ -15,11 +15,11 @@ public class chatUtils
 		this.s = s;
 	}
 
-	public static void receiveMessage()
+	public static String receiveMessage()
 	{
 		InputStreamReader inStream;
 		BufferedReader bf;
-		String message;
+		String message = null;
 
 		try
 		{
@@ -32,8 +32,13 @@ public class chatUtils
 		{
 			e.printStackTrace();
 		}
+		finally
+		{
+			return message;
+		}
 	}
 
+	// Einlesen der Nutzereingaben
 	public static void scanInput()
 	{
 		Scanner scan;
@@ -43,7 +48,12 @@ public class chatUtils
 		scan = new Scanner(System.in);
 		message = scan.nextLine();
 		if(message.equals("-q"))
-			System.exit(1);
+		{
+			//System.exit(1);
+			server.endConn();
+			client.endConn();
+		}
+
 		else
 			sendMessage(message);
 	}

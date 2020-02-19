@@ -9,7 +9,7 @@ Registrierter Benutzer:                        Windows-Benutzer
 Registrierte Organisation:                     
 Produkt-ID:                                    00330-50000-00000-AAOEM
 UrsprÅngliches Installationsdatum:             12.08.2019, 10:13:14
-Systemstartzeit:                               18.02.2020, 08:50:42
+Systemstartzeit:                               18.02.2020, 13:11:18
 Systemhersteller:                              HP
 Systemmodell:                                  HP ProBook 650 G2
 Systemtyp:                                     x64-based PC
@@ -23,10 +23,10 @@ Systemgebietsschema:                           de;Deutsch (Deutschland)
 Eingabegebietsschema:                          de;Deutsch (Deutschland)
 Zeitzone:                                      (UTC+01:00) BrÅssel, Kopenhagen, Madrid, Paris
 Gesamter physischer Speicher:                  8.073 MB
-VerfÅgbarer physischer Speicher:               4.157 MB
+VerfÅgbarer physischer Speicher:               4.031 MB
 Virtueller Arbeitsspeicher: Maximale Grî·e:    13.193 MB
-Virtueller Arbeitsspeicher: VerfÅgbar:         7.361 MB
-Virtueller Arbeitsspeicher: Zurzeit verwendet: 5.832 MB
+Virtueller Arbeitsspeicher: VerfÅgbar:         7.619 MB
+Virtueller Arbeitsspeicher: Zurzeit verwendet: 5.574 MB
 Auslagerungsdateipfad(e):                      C:\pagefile.sys
 DomÑne:                                        WORKGROUP
 Anmeldeserver:                                 \\DESKTOP-CSMDB1H

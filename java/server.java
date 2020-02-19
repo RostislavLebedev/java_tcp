@@ -13,6 +13,8 @@ public class server
 {
 	public static void main(String [] args) throws IOException
 	{
+		String message;
+
 		// ServerSocket und Socket erstellen
 		ServerSocket servSock = new ServerSocket(4999);
 		Socket s = servSock.accept();
@@ -21,12 +23,17 @@ public class server
 		System.out.println("client connected");
 		while(true)
 		{
-			// Nutzereingaben einlesen
-			chat.scanInput();
-
 			// Nachricht vom Client empfangen
 			System.out.print("Client:\t");
-			chat.receiveMessage();
+			message = chat.receiveMessage();
+
+			// Nutzereingaben einlesen
+			chat.scanInput();
 		}
+	}
+
+	static void endConn()
+	{
+		System.exit(1);
 	}
 }
