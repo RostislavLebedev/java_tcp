@@ -27,7 +27,7 @@ public class client
 		while(true)
 		{
 			// Nutzereinagben einlesen
-			chat.scanInput();
+			// chat.scanInput();
 
 			// Nachricht vom Server erhalten
 			System.out.print("Server:\t");

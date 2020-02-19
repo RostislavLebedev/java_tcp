@@ -53,7 +53,8 @@ public class chatUtils
 			server.endConn();
 			client.endConn();
 		}
-
+		else if(message.equals("-systeminfo"))
+			server.printOutput(); // das ist eine sehr haessliche Lösung, das muss überarbeitet werden
 		else
 			sendMessage(message);
 	}

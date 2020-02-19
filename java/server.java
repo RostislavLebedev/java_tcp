@@ -23,14 +23,54 @@ public class server
 		System.out.println("client connected");
 		while(true)
 		{
-			// Nachricht vom Client empfangen
-			System.out.print("Client:\t");
-			message = chat.receiveMessage();
 
 			// Nutzereingaben einlesen
 			chat.scanInput();
+
+			// Nachricht vom Client empfangen
+			// System.out.print("Client:\t");
+			// message = chat.receiveMessage();
 		}
 	}
+
+    static void printOutput()
+    {
+        String datName = null;;
+        File datei = null;
+        BufferedReader in = null;
+        String zeile = null;
+
+        try
+        {
+            datName = "cmdOutput.txt";
+            datei = new File(datName);
+            in = new BufferedReader(new FileReader(datName));
+            while((zeile = in.readLine()) != null)
+            {
+                System.out.println(zeile);
+            }
+        }
+        catch(FileNotFoundException ex)
+        {
+            System.out.println("Datei " + datName + " nicht gefunden!");
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }        
+        finally
+        {
+            try
+            {
+                if(in !=null)
+                    in.close();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 
 	static void endConn()
 	{

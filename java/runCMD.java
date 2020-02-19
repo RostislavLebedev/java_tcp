@@ -26,7 +26,6 @@ class runCMD
             p = Runtime.getRuntime().exec(
                     "cmd /c " //Nur unter Windows notwendig!
                     + command, null, new File(basedir));
-
         }
         catch (IOException ex)
         {
