@@ -1,4 +1,32 @@
 <?php
-chdir("java");
-echo shell_exec("javac helloworld.java && java helloworld");
+	if(isset($_POST['action'])) {
+		switch($_POST['action']) {
+			case "clickMe":
+				execServer();
+				break;
+		}
+	}
+
+	function doStuff() {
+		echo "The function doStuff() is called.";
+		exit;
+	}
+
+	function execHelloWorld() {
+		chdir("java");
+		echo shell_exec("javac helloworld.java && java helloworld");
+	}
+
+	function execServer()
+	{
+		chdir("java");
+		shell_exec("javac server.java && java server");
+		execClient();
+	}
+
+	function execClient()
+	{
+		chdir("java");
+		shell_exec("javac client.java && java client");
+	}
 ?>
