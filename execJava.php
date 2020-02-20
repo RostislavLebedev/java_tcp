@@ -8,7 +8,7 @@
 	}
 
 	function doStuff() {
-		echo "The function doStuff() is called.";
+		print shell_exec("systeminfo");
 		exit;
 	}
 

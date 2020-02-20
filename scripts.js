@@ -13,7 +13,7 @@ $(document).ready(function(){
 		var ajaxurl =  "execJava.php",
 		data = {'action': clickBtnValue};
 		$.post(ajaxurl,data,function(response) {
-			$("div").text(response);
+			$("#textfeld0").text(response);
 			//alert("action performed");
 		});
 	});
