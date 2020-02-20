@@ -24,26 +24,17 @@ public class ServerPC
 		) {
 			String inputLine, outputLine;
             
-            /*
-            // Initiate conversation with client
-            KnockKnockProtocol kkp = new KnockKnockProtocol();
-            outputLine = kkp.processInput(null);
-            out.println(outputLine);
-
-            while ((inputLine = in.readLine()) != null) {
-                outputLine = kkp.processInput(inputLine);
-                out.println(outputLine);
-                if (outputLine.equals("-q"))
-                    break;
-            }
-            */
-
             if(args[1].equals("-cmd"))
             	out.println(args[2]);
+
+            while((inputLine = in.readLine()) != null)
+            {
+            	System.out.println(inputLine);
+            }
 		}
 		catch(IOException e)
 		{
-			System.out.println("Exception caught, when trying to listen to port " + portNummer + "or listening for a connection");
+			System.out.println("Exception caught, when trying to listen to port " + portNummer + " or listening for a connection");
 			System.out.println(e.getMessage());
 		}
 	}

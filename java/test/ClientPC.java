@@ -21,9 +21,10 @@ public class ClientPC
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		) {
+			BufferedReader br = new BufferedReader(new FileReader("cmdOutput.txt"));
 			BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 			String fromServer;
-			String fromUser;
+			String fromUser = null;
 
 			while ((fromServer = in.readLine()) != null)
 			{
@@ -33,17 +34,26 @@ public class ClientPC
                 else
 	            {
 	            	runCommand.execCMD(fromServer);
+
+	            	try
+	            	{
+	            		while((fromUser = br.readLine()) != null)
+		            	{
+		            		out.println(fromUser);
+		            	}
+		            	System.exit(1);
+	            	}
+	            	catch(IOException ioex)
+	            	{
+	            		System.err.println("IOException beim Einlesen von cmdOutput.txt!");
+	            		System.exit(1);
+	            	}
 	            }
-                
-                /*
-                fromUser = stdIn.readLine();
-                if (fromUser != null)
-                {
-                    System.out.println("Client: " + fromUser);
-                    out.println(fromUser);
-                }
-                */
             }
+		}
+		catch(FileNotFoundException fnex)
+		{
+			System.err.println("Datei nicht gefunden!");
 		}
 		catch(InterruptedException iex)
 		{
@@ -59,5 +69,10 @@ public class ClientPC
 			System.err.println("Kein I/O für die Verbindung mit " + hostName);
 			System.exit(1);
 		}
+	}
+
+	public static void datEinlesen()
+	{
+		
 	}
 }
