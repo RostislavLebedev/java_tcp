@@ -23,10 +23,10 @@ Systemgebietsschema:                           de;Deutsch (Deutschland)
 Eingabegebietsschema:                          de;Deutsch (Deutschland)
 Zeitzone:                                      (UTC+01:00) BrÅssel, Kopenhagen, Madrid, Paris
 Gesamter physischer Speicher:                  8.073 MB
-VerfÅgbarer physischer Speicher:               3.940 MB
+VerfÅgbarer physischer Speicher:               3.445 MB
 Virtueller Arbeitsspeicher: Maximale Grî·e:    13.193 MB
-Virtueller Arbeitsspeicher: VerfÅgbar:         7.562 MB
-Virtueller Arbeitsspeicher: Zurzeit verwendet: 5.631 MB
+Virtueller Arbeitsspeicher: VerfÅgbar:         6.914 MB
+Virtueller Arbeitsspeicher: Zurzeit verwendet: 6.279 MB
 Auslagerungsdateipfad(e):                      C:\pagefile.sys
 DomÑne:                                        WORKGROUP
 Anmeldeserver:                                 \\DESKTOP-CSMDB1H
@@ -59,7 +59,7 @@ Netzwerkkarte(n):                              4 Netzwerkadapter installiert.
                                                      DHCP aktiviert:  Ja
                                                      DHCP-Server:     10.35.0.200
                                                      IP-Adresse(n)
-                                                     [01]: 10.70.148.120
+                                                     [01]: 10.71.159.65
                                                      [02]: fe80::9995:ff4:78ca:9978
                                                [04]: Bluetooth Device (Personal Area Network)
                                                      Verbindungsname: Bluetooth-Netzwerkverbindung

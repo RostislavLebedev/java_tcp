@@ -7,9 +7,9 @@ public class ServerPC
 {
 	public static void main(String [] args) throws IOException
 	{
-		if(args.length != 1)
+		if(args.length != 3)
 		{
-			System.err.println("Aufruf: java ServerPC <portNummer>");
+			System.err.println("Aufruf: java ServerPC <portNummer> <commandType> <command>");
 			System.exit(1);
 		}
 
@@ -24,6 +24,7 @@ public class ServerPC
 		) {
 			String inputLine, outputLine;
             
+            /*
             // Initiate conversation with client
             KnockKnockProtocol kkp = new KnockKnockProtocol();
             outputLine = kkp.processInput(null);
@@ -35,6 +36,10 @@ public class ServerPC
                 if (outputLine.equals("-q"))
                     break;
             }
+            */
+
+            if(args[1].equals("-cmd"))
+            	out.println(args[2]);
 		}
 		catch(IOException e)
 		{

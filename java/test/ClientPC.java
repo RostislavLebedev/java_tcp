@@ -13,6 +13,8 @@ public class ClientPC
 
 		String hostName = args[0];
 		int portNummer = Integer.parseInt(args[1]);
+		String basedir = "C:/xampp/htdocs/mttc/proto/java/test";
+		runCMD runCommand = new runCMD(basedir);
 
 		try (
 			Socket socket = new Socket(hostName, portNummer);
@@ -28,14 +30,24 @@ public class ClientPC
                 System.out.println("Server: " + fromServer);
                 if (fromServer.equals("-q"))
                     break;
+                else
+	            {
+	            	runCommand.execCMD(fromServer);
+	            }
                 
+                /*
                 fromUser = stdIn.readLine();
                 if (fromUser != null)
                 {
                     System.out.println("Client: " + fromUser);
                     out.println(fromUser);
                 }
+                */
             }
+		}
+		catch(InterruptedException iex)
+		{
+			System.err.println("A wild InterruptedException occured!");
 		}
 		catch(UnknownHostException e)
 		{
