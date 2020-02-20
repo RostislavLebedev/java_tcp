@@ -33,7 +33,6 @@ class runCMD
         }
 
         // Ausgabe in der CMD des Clients
-        
         /*
         System.out.println("OUTPUT");
         printStream(p.getInputStream());

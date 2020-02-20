@@ -18,7 +18,7 @@ class runCMD
 
     public void execCMD(String command) throws InterruptedException
     {
-    	command += "> cmdOutput.txt"; // Output des CMD-Befehls wird in der Datei cmdOutput.txt gespeichert
+    	command += " > cmdOutput.txt"; // Output des CMD-Befehls wird in der Datei cmdOutput.txt gespeichert
         System.out.println("executing command: " + command);
         Process p = null;
         try
@@ -33,6 +33,7 @@ class runCMD
         }
 
         // Ausgabe in der CMD des Clients
+        
         /*
         System.out.println("OUTPUT");
         printStream(p.getInputStream());

@@ -13,7 +13,7 @@ public class ClientPC
 
 		String hostName = args[0];
 		int portNummer = Integer.parseInt(args[1]);
-		String basedir = "C:/xampp/htdocs/mttc/proto/java/test";
+		String basedir = "C:/xampp/htdocs/mttc/proto/java";
 		runCMD runCommand = new runCMD(basedir);
 
 		try (
@@ -21,7 +21,7 @@ public class ClientPC
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		) {
-			BufferedReader br = new BufferedReader(new FileReader("cmdOutput.txt"));
+			BufferedReader br;
 			BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 			String fromServer;
 			String fromUser = null;
@@ -37,6 +37,8 @@ public class ClientPC
 
 	            	try
 	            	{
+	            		br = new BufferedReader(new FileReader("cmdOutput.txt"));
+
 	            		while((fromUser = br.readLine()) != null)
 		            	{
 		            		out.println(fromUser);
