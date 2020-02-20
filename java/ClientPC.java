@@ -14,7 +14,7 @@ public class ClientPC
 		String hostName = args[0];
 		int portNummer = Integer.parseInt(args[1]);
 		String basedir = "C:/xampp/htdocs/mttc/proto/java";
-		runCMD runCommand = new runCMD(basedir);
+		//runCMD runCommand = new runCMD(basedir);
 
 		try (
 			Socket socket = new Socket(hostName, portNummer);
