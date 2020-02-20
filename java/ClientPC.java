@@ -33,10 +33,15 @@ public class ClientPC
                     break;
                 else
 	            {
-	            	runCommand.execCMD(fromServer);
+	            	execCMD(fromServer, out);
 
+	            	break;
+
+	            	
+	            	/*
 	            	try
 	            	{
+	            		// ????????????????????????????????????????????????
 	            		br = new BufferedReader(new FileReader("cmdOutput.txt"));
 
 	            		while((fromUser = br.readLine()) != null)
@@ -50,6 +55,7 @@ public class ClientPC
 	            		System.err.println("IOException beim Einlesen von cmdOutput.txt!");
 	            		System.exit(1);
 	            	}
+	            	*/
 	            }
             }
 		}
@@ -73,8 +79,47 @@ public class ClientPC
 		}
 	}
 
-	public static void datEinlesen()
-	{
-		
-	}
+	public static void execCMD(String command, PrintWriter out) throws InterruptedException
+    {
+    	//command += " > cmdOutput.txt"; // Output des CMD-Befehls wird in der Datei cmdOutput.txt gespeichert
+        System.out.println("executing command: " + command);
+        Runtime rt = null;
+        Process proc = null;
+
+        try
+        {
+            rt = Runtime.getRuntime();
+            proc = rt.exec("cmd /c" + command);
+        }
+        catch(IOException e)
+        {
+            System.err.println("Etwas ging schief!");
+        }
+
+        // Ausgabe in der CMD des Clients
+        System.out.println("OUTPUT wird zum Server gesendet!");
+        printStream(proc.getInputStream(), out);
+        System.out.println("ERROR-OUTPUT");
+        printStream(proc.getErrorStream(), out);
+    }
+
+    // Ausgabe in der CMD des Clients
+    public static void printStream(InputStream stream, PrintWriter out)
+    {
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(stream));
+        String line = "";
+        try
+        {
+           while ((line = in.readLine()) != null)
+           {
+                out.println(line);
+           }
+           in.close();
+        }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
+    }
 }

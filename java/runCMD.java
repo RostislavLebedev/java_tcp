@@ -20,16 +20,17 @@ class runCMD
     {
     	command += " > cmdOutput.txt"; // Output des CMD-Befehls wird in der Datei cmdOutput.txt gespeichert
         System.out.println("executing command: " + command);
-        Process p = null;
+        Runtime rt = null;
+        Process proc = null;
+
         try
         {
-            p = Runtime.getRuntime().exec(
-                    "cmd /c " //Nur unter Windows notwendig!
-                    + command, null, new File(basedir));
+            rt = Runtime.getRuntime();
+            proc = rt.exec("cmd /c" + command);
         }
-        catch (IOException ex)
+        catch(IOException e)
         {
-            ex.printStackTrace();
+            System.err.println("Etwas ging schief!");
         }
 
         // Ausgabe in der CMD des Clients

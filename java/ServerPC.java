@@ -27,10 +27,12 @@ public class ServerPC
             if(args[1].equals("-cmd"))
             	out.println(args[2]);
 
+            
             while((inputLine = in.readLine()) != null)
             {
             	System.out.println(inputLine);
             }
+            
 		}
 		catch(IOException e)
 		{
