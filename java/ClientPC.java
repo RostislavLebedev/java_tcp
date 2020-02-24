@@ -36,26 +36,6 @@ public class ClientPC
 	            	execCMD(fromServer, out);
 
 	            	break;
-
-	            	
-	            	/*
-	            	try
-	            	{
-	            		// ????????????????????????????????????????????????
-	            		br = new BufferedReader(new FileReader("cmdOutput.txt"));
-
-	            		while((fromUser = br.readLine()) != null)
-		            	{
-		            		out.println(fromUser);
-		            	}
-		            	System.exit(1);
-	            	}
-	            	catch(IOException ioex)
-	            	{
-	            		System.err.println("IOException beim Einlesen von cmdOutput.txt!");
-	            		System.exit(1);
-	            	}
-	            	*/
 	            }
             }
 		}
