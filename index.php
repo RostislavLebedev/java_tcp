@@ -11,7 +11,9 @@
 <body>
 	<button class="button" name="clickMe" value="clickMe" id="theButton">Click Me!</button>
 	<div id="textfeld0">
-		
+		<p>
+			
+		</p>
 	</div>
 
 	<!-- FOOTER BEGINNT -->

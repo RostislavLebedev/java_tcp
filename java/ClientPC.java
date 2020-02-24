@@ -22,10 +22,15 @@ public class ClientPC
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		) {
 			BufferedReader br;
-			BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
+			//BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 			String fromServer;
-			String fromUser = null;
+			//String fromUser = null;
 
+			fromServer = in.readLine();
+			System.out.println("Server: " + fromServer);
+			execCMD(fromServer, out);
+
+			/*
 			while ((fromServer = in.readLine()) != null)
 			{
                 System.out.println("Server: " + fromServer);
@@ -38,11 +43,14 @@ public class ClientPC
 	            	break;
 	            }
             }
+            */
 		}
+		/*
 		catch(FileNotFoundException fnex)
 		{
 			System.err.println("Datei nicht gefunden!");
 		}
+		*/
 		catch(InterruptedException iex)
 		{
 			System.err.println("A wild InterruptedException occured!");
@@ -77,9 +85,9 @@ public class ClientPC
         }
 
         // Ausgabe in der CMD des Clients
-        System.out.println("OUTPUT wird zum Server gesendet!");
+        System.out.println("Output wird zum Server gesendet!");
         printStream(proc.getInputStream(), out);
-        System.out.println("ERROR-OUTPUT");
+        System.out.println("ERROR-OUTPUT:");
         printStream(proc.getErrorStream(), out);
     }
 
