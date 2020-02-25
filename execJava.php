@@ -18,15 +18,16 @@
 	function execServer()
 	{
 		chdir("java");
-		shell_exec("javac ServerPC.java && java ServerPC 4444 -cmd ipconfig");
+		//shell_exec("javac ServerPC.java && java ServerPC 4444 -cmd ipconfig");
 		showOutput();
 	}
 
 	// Die Zeilenumbrüche werden nicht erkannt!
 	function showOutput() {
-		$datei = file("clientCmdOutput.txt");
-		for ($i = 0; $i < count($datei); $i++) {
-			echo nl2br($datei[$i]);
+		$datei = file('clientCmdOutput.txt');
+
+		for ($zeile = 0; $zeile < count($datei); $zeile++) {
+			echo nl2br("$datei[$zeile]\r\n");
 		}
 	}
 ?>
