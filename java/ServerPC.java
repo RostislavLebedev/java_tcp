@@ -32,7 +32,7 @@ public class ServerPC
 			ServerSocket serverSocket = new ServerSocket(portNummer);
 			Socket clientSocket = serverSocket.accept(); // The accept method waits until a client starts up and requests a connection on the host and port of this server
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); // Daten an den Client
-			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())); // Daten vom Client
+			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), "UTF-8")); // Daten vom Client
 		) {
 			String inputLine, outputLine;
             
@@ -51,6 +51,10 @@ public class ServerPC
             }
             
             bw.close();
+		}
+		catch(UnsupportedEncodingException ueex)
+		{
+			System.err.println("Nicht unterstützte Codierung!");
 		}
 		catch(IOException e)
 		{
