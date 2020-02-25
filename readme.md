@@ -6,8 +6,3 @@ Auruf am Client/Slave:
 Die vom Server empfangenen Daten (Client-CMD-Output) werden serverseitig in einer clientCmdOutput.txt gespeichert,
 um anschließend in der Web-Oberfläche dargestellt werden zu können.
 Die Anwendung funktioniert unter Windows.
-
-TODO:
-- Zeilenumbrühe in der Web-Oberfläche
-- Linux-Kompatibilität
-- Die clientseitige Anwendung muss konstant laufen, der Socket muss immer empfangsbereit sein
