@@ -1,12 +1,5 @@
-function myFunc()
-{
-	$.ajax({url:"execJava.php",success:function(result)
-	{
-		$("div").text(result);
-	}
-})
-}
-
+// Der div mit id="textfeld0" wird mit dem Text gefüllt,
+// den die php-Funktionen liefern.
 $(document).ready(function(){
 	$('.button').click(function(){
 		var clickBtnValue = $(this).val();
@@ -14,7 +7,6 @@ $(document).ready(function(){
 		data = {'action': clickBtnValue};
 		$.post(ajaxurl,data,function(response) {
 			$("#textfeld0").text(response);
-			//alert("action performed");
 		});
 	});
 });

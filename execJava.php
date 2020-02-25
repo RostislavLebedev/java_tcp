@@ -7,22 +7,19 @@
 		}
 	}
 
+	// zum Testen
 	function execHelloWorld() {
 		chdir("java");
 		echo shell_exec("javac helloworld.java && java helloworld");
 	}
 
+	// hier wird die serverseitige java-Anwendung gestartet
+	// die clientseitige Anwendung muss manuell aus dem Command Prompt des Clients gestartet werden
 	function execServer()
 	{
 		chdir("java");
-		//shell_exec("javac ServerPC.java && java ServerPC 4444 -cmd ipconfig");
+		shell_exec("javac ServerPC.java && java ServerPC 4444 -cmd ipconfig");
 		showOutput();
-	}
-
-	function execClient()
-	{
-		chdir("java");
-		shell_exec("javac ClientPC.java && java ClientPC");
 	}
 
 	// Die Zeilenumbrüche werden nicht erkannt!

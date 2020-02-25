@@ -1,44 +1,17 @@
+ Volume in Laufwerk C: hat keine Bezeichnung.
+ Volumeseriennummer: 9AFB-A074
 
-Windows-IP-Konfiguration
+ Verzeichnis von C:\xampp\htdocs\mttc\proto\java
 
-
-Ethernet-Adapter Ethernet:
-
-   Medienstatus. . . . . . . . . . . : Medium getrennt
-   Verbindungsspezifisches DNS-Suffix: 
-
-Ethernet-Adapter Ethernet 3:
-
-   Medienstatus. . . . . . . . . . . : Medium getrennt
-   Verbindungsspezifisches DNS-Suffix: 
-
-Ethernet-Adapter VirtualBox Host-Only Network:
-
-   Verbindungsspezifisches DNS-Suffix: 
-   Verbindungslokale IPv6-Adresse  . : fe80::c85:d8cc:dfd6:bb24%47
-   IPv4-Adresse  . . . . . . . . . . : 192.168.56.1
-   Subnetzmaske  . . . . . . . . . . : 255.255.255.0
-   Standardgateway . . . . . . . . . : 
-
-Drahtlos-LAN-Adapter LAN-Verbindung* 1:
-
-   Medienstatus. . . . . . . . . . . : Medium getrennt
-   Verbindungsspezifisches DNS-Suffix: 
-
-Drahtlos-LAN-Adapter LAN-Verbindung* 11:
-
-   Medienstatus. . . . . . . . . . . : Medium getrennt
-   Verbindungsspezifisches DNS-Suffix: 
-
-Drahtlos-LAN-Adapter WLAN:
-
-   Verbindungsspezifisches DNS-Suffix: 
-   Verbindungslokale IPv6-Adresse  . : fe80::9995:ff4:78ca:9978%15
-   IPv4-Adresse  . . . . . . . . . . : 10.71.159.65
-   Subnetzmaske  . . . . . . . . . . : 255.255.248.0
-   Standardgateway . . . . . . . . . : 10.71.152.1
-
-Ethernet-Adapter Bluetooth-Netzwerkverbindung:
-
-   Medienstatus. . . . . . . . . . . : Medium getrennt
-   Verbindungsspezifisches DNS-Suffix: 
+24.02.2020  14:16    <DIR>          .
+24.02.2020  14:16    <DIR>          ..
+25.02.2020  09:09                 0 clientCmdOutput.txt
+25.02.2020  09:08             3.444 ClientPC.class
+25.02.2020  09:08             3.513 ClientPC.java
+20.02.2020  11:17    <DIR>          firstTry
+24.02.2020  14:02               427 helloworld.class
+24.02.2020  09:02               134 helloworld.java
+25.02.2020  09:08             3.079 ServerPC.class
+25.02.2020  09:08             2.359 ServerPC.java
+               7 Datei(en),         12.956 Bytes
+               3 Verzeichnis(se), 192.264.392.704 Bytes frei
