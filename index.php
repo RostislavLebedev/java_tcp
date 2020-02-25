@@ -11,7 +11,18 @@
 <body>
 	<button class="button" name="clickMe" value="clickMe" id="theButton">Click Me!</button>
 	<div id="textfeld0">
-		
+		<?php
+		chdir("java");
+		$datei = file('clientCmdOutput.txt');
+		# header('Content-type: text/plain');
+		for ($zeile = 0; $zeile < count($datei); $zeile++) {
+			$line = $datei[$zeile];
+			// $line = "<p>" . $datei[$zeile] . "<p/>";
+			// echo str_replace(array("\r\n","\r","\n"), '<br>', $line);
+			// echo $line;
+			echo "<br>" . $line;	
+		}
+		?>
 	</div>
 
 	<!-- FOOTER BEGINNT -->
