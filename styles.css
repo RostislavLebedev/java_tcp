@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'PixelOperator';
+  src: url('PixelOperator.ttf');
+}
+
+body
+{
+	background: linear-gradient(270deg, #711c91, #ea00d9, #0abdc6, #133e7c, #091833);
+	background-size: 1000% 1000%;
+
+	-webkit-animation: AnimationName 100s ease infinite;
+	-moz-animation: AnimationName 100s ease infinite;
+	animation: AnimationName 100s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#theButton
+{
+	width: 200px;
+	height: 100px;
+	margin-top: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 0;
+	background-color: rgba(255,255,255,0.05);
+	border-radius: 5px 5px 5px 5px;
+	border: 4px solid transparent;
+	color: white;
+	font-family: 'PixelOperator';
+	font-size: 200%;
+	transition: background-color 0.5s, color 0.5s, font-shadow 0.5s;
+}
+
+#textfeld0
+{
+	padding: 40pt;
+	text-align: left;
+	font-family: "Consolas";
+	font-size: 12pt;
+	margin-top: 10px;
+	margin-right: 10%;
+	margin-bottom: 0;
+	margin-left: 10%;*/
+	color: white;
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 5px 5px 5px 5px;
+	border: 4px solid transparent;
+}
+
+#theButton:Hover
+{
+	background-color: rgba(255,255,255,0.4);
+	color: black;
+	cursor: pointer;
+}
+
+.footer
+{
+	background-color: rgba(0, 0, 0, 0);
+	color: transparent;
+	font-family: 'Verdana';
+	font-size: 10pt;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	transition: color 0.5s, background-color 0.5s;
+}
+
+.footer:hover
+{
+	color: lightgrey;
+	background-color: rgba(0, 0, 0, 0.8);
+}

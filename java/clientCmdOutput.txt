@@ -1,0 +1,18 @@
+ Volume in Laufwerk C: hat keine Bezeichnung.
+ Volumeseriennummer: 9AFB-A074
+
+ Verzeichnis von C:\xampp\htdocs\mttc\proto\java
+
+25.02.2020  10:02    <DIR>          .
+25.02.2020  10:02    <DIR>          ..
+25.02.2020  10:28                 0 clientCmdOutput.txt
+25.02.2020  10:28             3.444 ClientPC.class
+25.02.2020  09:39             3.513 ClientPC.java
+20.02.2020  11:17    <DIR>          firstTry
+24.02.2020  14:02               427 helloworld.class
+24.02.2020  09:02               134 helloworld.java
+25.02.2020  10:28             3.229 ServerPC.class
+25.02.2020  09:42             2.480 ServerPC.java
+25.02.2020  10:02                52 switch.bat
+               8 Datei(en),         13.279 Bytes
+               3 Verzeichnis(se), 192.268.431.360 Bytes frei
