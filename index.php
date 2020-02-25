@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Web-Interface Proto</title>
-	<meta http-equiv="Content-Type"  content="text/html charset="UTF-8">
+	<meta http-equiv="Content-Type"  content="text/html" charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
