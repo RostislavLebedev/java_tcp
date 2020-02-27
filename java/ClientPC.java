@@ -21,19 +21,20 @@ public class ClientPC
 			System.exit(1); // Die Anwendung wird gestoppt, falls der Aufruf falsch
 		}
 
-		String hostName = args[0];
-		int portNummer = 4999;
+		InetAddress address = InetAddress.getByName(args[0]);
+		int port = 4999;
 		//String basedir = "C:/xampp/htdocs/mttc/proto/java";
 		//runCMD runCommand = new runCMD(basedir);
 
 		/* Erstellen einer Verbindung: Initialisierung eines Sockets */
 		try
 		{
-			Socket socket = new Socket(hostName, portNummer);
+			Socket socket = new Socket(address, port);
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true); // Daten an den Server
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Daten vom Server
 		
-			System.out.println("try beginnt");
+			//System.out.println("try beginnt");
+
 			//BufferedReader br;
 			//BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 			String fromServer;
@@ -49,12 +50,12 @@ public class ClientPC
 		}
 		catch(UnknownHostException e)
 		{
-			System.err.println("Kenne den Host nicht: " + hostName);
+			System.err.println("Kenne den Host nicht: " + address);
 			System.exit(1);
 		}
 		catch(IOException ex)
 		{
-			System.err.println("Kein I/O fuer die Verbindung mit " + hostName);
+			System.err.println("Kein I/O fuer die Verbindung mit " + address);
 			System.exit(1);
 		}
 	}

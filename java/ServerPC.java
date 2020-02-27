@@ -24,26 +24,29 @@ public class ServerPC
 			System.exit(1);
 		}
 
-		InetAddress bindAddr = InetAddress.getByName(args[0]);
-		int portNummer = 4999;
+		int port = 4999;
 		int backLog = 50;
+		InetAddress bindAddr = InetAddress.getByName(args[0]);
+		
 
 		/* Erstellen einer Verbindung: Instanziierung eines ServerSockets und eines Sockets. */
 		try
 		{
-			ServerSocket serverSocket = new ServerSocket(portNummer, backLog, bindAddr);
+			ServerSocket serverSocket = new ServerSocket(port, backLog, bindAddr);
 			Socket clientSocket = serverSocket.accept(); // The accept method waits until a client starts up and requests a connection on the host and port of this server
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); // Daten an den Client
 			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), "UTF-8")); // Daten vom Client
 
-			System.out.println("try beginnt");
+			//System.out.println("try beginnt");
+
 			String inputLine, outputLine;
             
             /* Wenn <commandType> == "-cmd", dann soll der Client den übergebenen Befehl <command> ausführen. */
             if(args[1].equals("-cmd"))
             	out.println(args[2]);
 
-            System.out.println("Command \"" + args[2] + "\" wird uebermittelt\n");
+            //System.out.println("Command \"" + args[2] + "\" wird uebermittelt\n");
+
             /* FileWriter und BufferedWriter für die Speicherung des CMD-Outputs des Clients in einer .txt. */
             FileWriter fw = new FileWriter("clientCmdOutput.txt");
             BufferedWriter bw = new BufferedWriter(fw);
@@ -66,7 +69,7 @@ public class ServerPC
 		}
 		catch(IOException e)
 		{
-			System.out.println("Exception caught, when trying to listen to port " + portNummer + " or listening for a connection");
+			System.out.println("Exception caught, when trying to listen to port " + port + " or listening for a connection");
 			System.out.println(e.getMessage());
 		}
 	}
