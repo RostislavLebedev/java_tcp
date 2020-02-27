@@ -1,7 +1,7 @@
 // ClientPC.java
 /*
 Aufruf asus dem Command Prompt:
-	java Client PC <hostname> <portNummer>
+	java Client PC <hostname>
 Die serverseitige Anwendung muss zuerst gestartet werden.
 Sobald die server- und die clientseitige Anwendung gestartet werden, wird ein CMD-Befehl am Client ausgeführt.
 Der Output des Command Promt wird an den Server geschickt, wo es anschließend in einer clientCmdOutput.txt gespeichert wird.
@@ -15,23 +15,24 @@ public class ClientPC
 	public static void main(String [] args) throws IOException
 	{
 		/* Überprüfen, ob der Aufruf richtig stattgefunden hat. */
-		if(args.length !=2)
+		if(args.length !=1)
 		{
-			System.err.println("Aufruf: java ClientPC <hostName> <portNummer>");
+			System.err.println("Aufruf: java ClientPC <hostName>");
 			System.exit(1); // Die Anwendung wird gestoppt, falls der Aufruf falsch
 		}
 
 		String hostName = args[0];
-		int portNummer = Integer.parseInt(args[1]);
+		int portNummer = 4999;
 		//String basedir = "C:/xampp/htdocs/mttc/proto/java";
 		//runCMD runCommand = new runCMD(basedir);
 
 		/* Erstellen einer Verbindung: Initialisierung eines Sockets */
-		try (
+		try
+		{
 			Socket socket = new Socket(hostName, portNummer);
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true); // Daten an den Server
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Daten vom Server
-		) {
+		
 			System.out.println("try beginnt");
 			//BufferedReader br;
 			//BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
