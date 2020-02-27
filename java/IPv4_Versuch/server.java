@@ -16,7 +16,7 @@ public class server
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), "UTF-8"));
 
-			out.println("Der Server sendet etwas an den Client;");
+			out.println("Der Server sendet etwas an den Client");
 			String inputLine;
 
 			while((inputLine = in.readLine()) != null)
