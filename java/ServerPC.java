@@ -1,7 +1,7 @@
 // ServerPC.java
 /*
 Aufruf aus dem Command Prompt:
-	java ServerPC <portNummer> <commandType> <command>
+	java ServerPC <clientIP> <portNummer> <commandType> <command>
 Unterschtütze <commandType>:
 	-cmd
 Die serverseitige Anwendung muss zuerst gestartet werden.
@@ -18,28 +18,31 @@ public class ServerPC
 	{
 		/*	Überprüfen, ob der Aufruf richtig stattgefunden hat.
 			<commandType> "-cmd" */
-		if(args.length != 3)
+		if(args.length != 4)
 		{
-			System.err.println("Aufruf: java ServerPC <portNummer> <commandType> <command>");
+			System.err.println("Aufruf: java ServerPC <clientIP> <portNummer> <commandType> <command>");
 			System.exit(1);
 		}
 
-
-		int portNummer = Integer.parseInt(args[0]);
+		InetAddress bindAddr = InetAddress.getByName(args[0]);
+		int portNummer = Integer.parseInt(args[1]);
+		int backLog = 4;
 
 		/* Erstellen einer Verbindung: Instanziierung eines ServerSockets und eines Sockets. */
 		try (
-			ServerSocket serverSocket = new ServerSocket(portNummer);
+			ServerSocket serverSocket = new ServerSocket(portNummer, backLog, bindAddr);
 			Socket clientSocket = serverSocket.accept(); // The accept method waits until a client starts up and requests a connection on the host and port of this server
 			PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); // Daten an den Client
 			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), "UTF-8")); // Daten vom Client
 		) {
+			System.out.println("try beginnt");
 			String inputLine, outputLine;
             
             /* Wenn <commandType> == "-cmd", dann soll der Client den übergebenen Befehl <command> ausführen. */
             if(args[1].equals("-cmd"))
-            	out.println(args[2]);
+            	out.println(args[3]);
 
+            System.out.println("Command " + args[3] + " uebermittelt\n");
             /* FileWriter und BufferedWriter für die Speicherung des CMD-Outputs des Clients in einer .txt. */
             FileWriter fw = new FileWriter("clientCmdOutput.txt");
             BufferedWriter bw = new BufferedWriter(fw);
@@ -51,6 +54,10 @@ public class ServerPC
             }
             
             bw.close();
+		}
+		catch(UnknownHostException uhe)
+		{
+			System.err.println("Kenne den host " + args[0] + " nicht!");
 		}
 		catch(UnsupportedEncodingException ueex)
 		{

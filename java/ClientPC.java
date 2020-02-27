@@ -32,6 +32,7 @@ public class ClientPC
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true); // Daten an den Server
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Daten vom Server
 		) {
+			System.out.println("try beginnt");
 			//BufferedReader br;
 			//BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
 			String fromServer;
@@ -52,7 +53,7 @@ public class ClientPC
 		}
 		catch(IOException ex)
 		{
-			System.err.println("Kein I/O für die Verbindung mit " + hostName);
+			System.err.println("Kein I/O fuer die Verbindung mit " + hostName);
 			System.exit(1);
 		}
 	}
